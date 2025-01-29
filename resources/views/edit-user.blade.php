@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add New User</title>
+    <title>Edit User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -21,12 +20,20 @@
             <div class="card-body">
                 <form action="{{ route('EditUser') }}" method="post">
                     @csrf
-                    <input type="hidden" name="user_id" id="" value="{{ $user->id }}">
+                    <input type="hidden" name="user_id" value="{{ $user->id }}">
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Full Name</label>
                         <input type="text" name="full_name" value="{{ $user->name }}" class="form-control"
                             id="formGroupExampleInput" placeholder="Enter Full Name">
                         @error('full_name')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Username</label>
+                        <input type="text" name="username" value="{{ $user->username }}" class="form-control"
+                            id="formGroupExampleInput" placeholder="Enter Username">
+                        @error('username')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
@@ -47,9 +54,7 @@
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
-
                 </form>
-
             </div>
         </div>
     </div>

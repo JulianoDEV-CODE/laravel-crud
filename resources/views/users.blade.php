@@ -12,7 +12,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                Laravel 11 CRUD 
+                Laravel 11 CRUD
                 <a href="/add/user" class="btn btn-success btn-sm float-end">Add New</a>
             </div>
             @if (Session::has('success'))
@@ -28,6 +28,7 @@
                         <th>Full name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
+                        <th>Username</th>
                         <th>Registration Date</th>
                         <th>Last Update</th>
                         <th colspan="2">Action</th>
@@ -40,6 +41,7 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->email}}</td>
                                     <td>{{$item->phone_number}}</td>
+                                    <td>{{$item->username}}</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td><a href="/edit/{{$item->id}}" class="btn btn-primary btn-sm">Edit</a></td>

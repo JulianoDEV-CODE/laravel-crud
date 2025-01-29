@@ -38,6 +38,12 @@
                         @error('phone_number')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">username</label>
+                            <input type="text" name="username" value="{{old('username')}}" class="form-control" id="formGroupExampleInput" placeholder="Enter Full Name">
+                            @error('username')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                     </div>
                     <div class="mb-3">
                         <label for="formGroupExampleInput2" class="form-label">Password</label>
